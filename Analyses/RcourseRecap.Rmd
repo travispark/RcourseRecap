@@ -37,11 +37,8 @@ compensation <- read.csv("Data/compensation.csv")
 ```
 
 
-###Add image from the internet
-```{r}
-!(http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
-```
-
+##Add image from the internet
+![Whale_memes_are_the_best](http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
 
 ## Make 3 graphs from the compensation dataset
 
