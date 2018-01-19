@@ -4,9 +4,11 @@
 rm(list = ls())
 
 library(tidyverse)
+library(knitr)
+library(ggplot2)
 
 #read in compensation data
-compensation <- read.csv("compensation.csv")
+compensation <- read.csv("Data/compensation.csv")
 
 #add a picture from the web
 ![](http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
