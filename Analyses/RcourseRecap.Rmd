@@ -10,9 +10,12 @@ library(ggplot2)
 #read in compensation data
 compensation <- read.csv("Data/compensation.csv")
 
+
 #add a picture from the web
 ![whale memes!](http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
 #make 3 graphs using the compensation data
+
+#graph1
 ggplot(compensation, aes(x = Root, y = Fruit, 
                          col = Grazing, shape = Grazing)) +
   geom_point(size = 2) +
@@ -22,3 +25,10 @@ ggplot(compensation, aes(x = Root, y = Fruit,
   scale_shape_manual(values = c(1,2)) +
   theme_bw() +
   xlim(c(0,10))
+  
+#graph2
+ggplot(compensation, aes(x = Fruit, fill = Grazing)) +
+  geom_histogram(binwidth = 5) +
+  scale_fill_manual(values = c("orange", "black")) +
+  theme_bw() +
+  facet_wrap(~Grazing, ncol = 1)
