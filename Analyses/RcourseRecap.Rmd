@@ -3,26 +3,26 @@ output:
   pdf_document: default
   html_document: default
 ---
-###Exercise suggested by Natalie Cooper to reinforce what was learnt during the R and reproducibility course taught 17-18 Jan 2018
+#Exercise to reinforce what was learnt during the R and reproducibility course taught 17-18 Jan 2018
 
-#Clear R's brain
+###Clear R's brain
 rm(list = ls())
 
 library(tidyverse)
 library(knitr)
 library(ggplot2)
 
-#read in compensation data
+###read in compensation data
 compensation <- read.csv("Data/compensation.csv")
 
 
-#add a picture from the web
+###add a picture from the web
 ![whale memes!](http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
 
 ##make 3 graphs using the compensation data
 
-#graph1
-ggplot(compensation, aes(x = Root, y = Fruit, 
+###graph1
+graph1 <- ggplot(compensation, aes(x = Root, y = Fruit, 
                          col = Grazing, shape = Grazing)) +
   geom_point(size = 2) +
   ylab("Fruit (pecs)") +
@@ -32,15 +32,21 @@ ggplot(compensation, aes(x = Root, y = Fruit,
   theme_bw() +
   xlim(c(0,10))
   
-#graph2
-ggplot(compensation, aes(x = Fruit, fill = Grazing)) +
+graph1  
+  
+###graph2
+graph2 <- ggplot(compensation, aes(x = Fruit, fill = Grazing)) +
   geom_histogram(binwidth = 5) +
   scale_fill_manual(values = c("orange", "black")) +
   theme_bw() +
   facet_wrap(~Grazing, ncol = 1)
   
-#graph3
-ggplot(compensation, aes(x = Grazing, y = Fruit, fill = Grazing)) +
+graph2  
+  
+###graph3
+graph3 <- ggplot(compensation, aes(x = Grazing, y = Fruit, fill = Grazing)) +
   geom_boxplot() +
   scale_fill_manual(values = c("blue", "red")) +  
   theme_bw()
+  
+graph3
