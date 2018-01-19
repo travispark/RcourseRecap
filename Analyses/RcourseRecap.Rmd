@@ -11,4 +11,14 @@ library(ggplot2)
 compensation <- read.csv("Data/compensation.csv")
 
 #add a picture from the web
-![](http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
+![whale memes!](http://i0.kym-cdn.com/photos/images/original/000/527/933/56e.png)
+#make 3 graphs using the compensation data
+ggplot(compensation, aes(x = Root, y = Fruit, 
+                         col = Grazing, shape = Grazing)) +
+  geom_point(size = 2) +
+  ylab("Fruit (pecs)") +
+  xlab("Root (mm)") +
+  scale_color_manual(values = c("blue", "red")) +
+  scale_shape_manual(values = c(1,2)) +
+  theme_bw() +
+  xlim(c(0,10))
